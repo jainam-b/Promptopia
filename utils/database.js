@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
 let isConnected=false; //track  connection 
 
+const db="mongodb+srv://jainam:a@cluster0.h5mn9fs.mongodb.net/?retryWrites=true&w=majority"
+
+
 export const connectToDB=async()=>{
     mongoose.set("strictQuery",true)
 
@@ -10,7 +13,7 @@ export const connectToDB=async()=>{
     }
 
     try {
-        await mongoose.connect(process.env.MONGO_URI, {
+        await mongoose.connect(db, {
             dbName:"share_prompt",
             useNewUrlParser:true,
             useUnifiedTopology:true,

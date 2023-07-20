@@ -8,11 +8,11 @@ const Nav = () => {
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
   useEffect(() => {
-    const setProviders = async () => {
+    const setUpProviders = async () => {
       const response = await getProviders();
       setProviders(response);
     };
-    setProviders();
+    setUpProviders();
   }, []);
 
   return (
@@ -42,7 +42,7 @@ const Nav = () => {
             </button>
             <Link rel="stylesheet" href="/profile" />
             <Image
-              src="/assets/images/logo.svg"
+              src={session?.user?.image}
               className="rounded-full"
               width={37}
               height={37}
@@ -72,7 +72,7 @@ const Nav = () => {
         {session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Image
-              src="/assets/images/logo.svg"
+              src={session?.user?.image}
               className="rounded-full"
               width={37}
               height={37}
