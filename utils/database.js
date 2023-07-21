@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 let isConnected=false; //track  connection 
 
-const db="mongodb+srv://jainam:a@cluster0.h5mn9fs.mongodb.net/?retryWrites=true&w=majority"
 
 
 export const connectToDB=async()=>{
+    const db="mongodb+srv://jainam:a@cluster0.h5mn9fs.mongodb.net/?retryWrites=true&w=majority"
     mongoose.set("strictQuery",true)
 
     if(isConnected){
