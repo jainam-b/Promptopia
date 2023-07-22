@@ -3,6 +3,7 @@ import Feed from "@components/Feed";
 // import Profile from "@components/Profile";
 // import PromptCard from "@components/PromptCard";
 // import Provider from "@components/Provider";
+
 const Home = () => {
   return (
     <section className=" w-full  flex-center flex-col">
@@ -16,7 +17,7 @@ const Home = () => {
         discover, create and share creative prompts
       </p>
 
-      {/* Feed */}
+      <Feed/>
     </section>
   );
 };
