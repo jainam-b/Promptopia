@@ -80,30 +80,37 @@ const Nav = () => {
               onClick={() => setToggleDropdown(!toggleDropdown)}
             />
             {toggleDropdown && (
-           <div className="dropdown">
-                  <Link
-                  href='/profile'
-                  className='dropdown_link'
+              <div className="dropdown">
+                <Link
+                  href="/profile"
+                  className="dropdown_link"
                   onClick={() => setToggleDropdown(false)}
                 >
                   My Profile
                 </Link>
                 <Link
-                  href='/create-prompt'
-                  className='dropdown_link'
+                  href="/create-prompt"
+                  className="dropdown_link"
                   onClick={() => setToggleDropdown(false)}
                 >
                   Create Prompt
                 </Link>
-                <button type="button" onClick={()=>{setToggleDropdown(false); signOut();}} className="mt-5 w-full black_btn " >
+                <button
+                  type="button"
+                  onClick={() => {
+                    setToggleDropdown(false);
+                    signOut();
+                  }}
+                  className="mt-5 w-full black_btn "
+                >
                   Sign Out
                 </button>
-           </div>
+              </div>
             )}
           </div>
         ) : (
           <>
-           {providers &&
+            {providers &&
               Object.values(providers).map((provider) => (
                 <button
                   type="button"
@@ -115,7 +122,7 @@ const Nav = () => {
                 >
                   Sign In
                 </button>
-                ))}
+              ))}
           </>
         )}
       </div>
